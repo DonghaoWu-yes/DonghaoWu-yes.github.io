@@ -256,12 +256,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .node-copy { display: grid; line-height: 1.22; }
 .node-copy strong { font-family: var(--serif); font-size: .98rem; }
 .node-copy small { margin-top: 4px; color: var(--muted); font-size: .68rem; }
-.node-research { --node-color: var(--rust); --line-width: 62px; left: -8px; top: 18%; }
-.node-research::after, .node-data::after { left: 100%; }
-.node-methods { --node-color: var(--teal); --line-width: 62px; right: -10px; top: 35%; flex-direction: row-reverse; }
-.node-methods::after, .node-teaching::after { right: 100%; transform: rotate(180deg); }
-.node-data { --node-color: var(--gold); --line-width: 48px; left: 0; top: 66%; }
-.node-teaching { --node-color: #6274a8; --line-width: 48px; right: -4px; top: 75%; flex-direction: row-reverse; }
+.node-methods { --node-color: var(--teal); --line-width: 58px; left: -8px; top: 14%; }
+.node-methods::after, .node-teaching::after { left: 100%; }
+.node-skills { --node-color: var(--gold); --line-width: 54px; right: -10px; top: 31%; flex-direction: row-reverse; }
+.node-skills::after, .node-research::after { right: 100%; transform: rotate(180deg); }
+.node-teaching { --node-color: #6274a8; --line-width: 54px; left: -4px; top: 48%; }
+.node-research { --node-color: var(--rust); --line-width: 48px; right: -4px; top: 78%; flex-direction: row-reverse; }
 .map-hint { position: absolute; bottom: 2px; margin: 0; color: var(--muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
 
 .signal-strip { overflow: hidden; border-block: 1px solid var(--line); background: var(--cream); }
@@ -418,10 +418,10 @@ details p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
   .portrait-frame { width: min(300px, 76vw); }
   .map-node { min-width: 0; width: calc(50% - 8px); top: auto; right: auto; left: auto; bottom: auto; flex-direction: row; }
   .map-node::after { display: none; }
-  .node-research { left: 0; bottom: 150px; }
-  .node-methods { right: 0; bottom: 150px; }
-  .node-data { left: 0; bottom: 80px; }
-  .node-teaching { right: 0; bottom: 80px; }
+  .node-methods { left: 0; bottom: 150px; }
+  .node-skills { right: 0; bottom: 150px; }
+  .node-teaching { left: 0; bottom: 80px; }
+  .node-research { right: 0; bottom: 80px; }
   .node-copy small { font-size: .6rem; }
   .map-hint { bottom: 34px; }
   .paper-card { min-height: 0; padding: 24px; grid-template-columns: 1fr; }
