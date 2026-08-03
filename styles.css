@@ -256,11 +256,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .node-copy { display: grid; line-height: 1.22; }
 .node-copy strong { font-family: var(--serif); font-size: .98rem; }
 .node-copy small { margin-top: 4px; color: var(--muted); font-size: .68rem; }
-.node-methods { --node-color: var(--teal); --line-width: 58px; left: -8px; top: 14%; }
+.node-methods { --node-color: var(--teal); --line-width: 58px; left: -8px; top: 25%; }
 .node-methods::after, .node-teaching::after { left: 100%; }
-.node-skills { --node-color: var(--gold); --line-width: 54px; right: -10px; top: 31%; flex-direction: row-reverse; }
+.node-skills { --node-color: var(--gold); --line-width: 54px; right: -10px; top: 40%; flex-direction: row-reverse; }
 .node-skills::after, .node-research::after { right: 100%; transform: rotate(180deg); }
-.node-teaching { --node-color: #6274a8; --line-width: 54px; left: -4px; top: 48%; }
+.node-teaching { --node-color: #6274a8; --line-width: 54px; left: -4px; top: 40%; }
 .node-research { --node-color: var(--rust); --line-width: 48px; right: -4px; top: 78%; flex-direction: row-reverse; }
 .map-hint { position: absolute; bottom: 2px; margin: 0; color: var(--muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
 
