@@ -297,7 +297,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .paper-number { padding-top: 4px; color: var(--rust); font-size: .73rem; font-weight: 900; letter-spacing: .1em; }
 .paper-content { display: flex; flex-direction: column; }
 .paper-kicker, .role-meta { margin: 0 0 10px; color: var(--teal); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.paper-content h3, .timeline-body h3, .teaching-card h3, .degree h3, .skill-card h3 {
+.paper-content h3, .timeline-body h3, .teaching-entry h3, .degree h3, .skill-card h3 {
   margin: 0;
   font-family: var(--serif);
   font-weight: 500;
@@ -312,15 +312,30 @@ summary { cursor: pointer; color: var(--teal); font-size: .82rem; font-weight: 8
 details p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
 
 .section-tinted { background: var(--cream); }
-.teaching-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: center; }
-.teaching-layout .section-heading { margin: 0; }
-.teaching-card { padding: 42px; display: grid; grid-template-columns: 70px 1fr; gap: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: 0 20px 55px rgba(24,35,58,.08); }
+.teaching-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.teaching-entry {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.teaching-entry:hover { transform: translateY(-4px); border-color: rgba(23,110,103,.38); box-shadow: 0 20px 55px rgba(24,35,58,.08); }
+.teaching-entry-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 190px 1fr; gap: 34px; }
+.teaching-entry-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.teaching-entry-featured .teaching-entry-header { display: block; }
 .teaching-icon { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 18px; background: var(--ink); color: white; font-family: var(--serif); font-size: 1.6rem; }
-.teaching-card h3 { font-size: 2rem; }
-.teaching-card > div > p:not(.role-meta) { color: var(--muted); }
+.teaching-index { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; border-radius: 13px; background: var(--cream-deep); color: var(--teal); font-size: .72rem; font-weight: 900; letter-spacing: .06em; }
+.teaching-date { margin: 0; color: var(--rust); font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.teaching-entry-featured .teaching-date { margin-top: 22px; }
+.teaching-entry h3 { font-size: clamp(1.55rem, 2.4vw, 2rem); }
+.teaching-entry-body > p:not(.role-meta):not(.teaching-with) { color: var(--muted); }
+.teaching-with { margin: 8px 0 16px; color: var(--ink-soft); font-family: var(--serif); font-size: .88rem; font-style: italic; }
 .check-list { margin: 22px 0 0; padding: 0; list-style: none; }
 .check-list li { position: relative; padding-left: 24px; margin: 10px 0; color: var(--ink-soft); }
 .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 900; }
+.compact-list { margin: 16px 0 0; padding-left: 18px; color: var(--ink-soft); }
+.compact-list li { margin: 8px 0; }
 
 .timeline { border-top: 1px solid var(--line); }
 .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 34px 0; border-bottom: 1px solid var(--line); }
@@ -362,7 +377,7 @@ details p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
   .hero { grid-template-columns: 1fr; padding-top: 72px; }
   .hero-copy { max-width: 800px; }
   .portrait-map { width: min(680px, 100%); margin-inline: auto; }
-  .teaching-layout { grid-template-columns: 1fr; gap: 42px; }
+  .teaching-entry-featured { grid-template-columns: 150px 1fr; }
   .skill-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -424,7 +439,9 @@ details p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
   .map-hint { bottom: 34px; }
   .paper-card { min-height: 0; padding: 24px; grid-template-columns: 1fr; }
   .paper-number { padding: 0; }
-  .teaching-card { padding: 28px; grid-template-columns: 1fr; }
+  .teaching-list { grid-template-columns: 1fr; }
+  .teaching-entry-featured { grid-column: auto; grid-template-columns: 1fr; }
+  .teaching-entry { padding: 26px; }
   .timeline-item { grid-template-columns: 1fr; gap: 8px; }
   .skill-grid { grid-template-columns: 1fr; }
   .skill-card { min-height: 220px; }
